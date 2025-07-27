@@ -19,13 +19,13 @@ def main():
 
         if choice == '1':
             # Prompt for and add an item
-            item_name = input("Enter the name of the item to add: ")
+            item_name = input("Enter the item to add: ")
             shopping_list.append(item_name)
             pass
         elif choice == '2':
             # Prompt for and remove an item
             remove_item = input("Enter the name of the item to remove: ")
-            if remove_item != shopping_list:
+            if remove_item not in shopping_list:
                 print(f"{remove_item} item was not found in cart")
             else:
                 shopping_list.remove(remove_item)
