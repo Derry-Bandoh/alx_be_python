@@ -1,27 +1,35 @@
+"""
+Module for performing basic arithmetic operations.
 
-def perform_operation(num1, num2, operation) :
+This module provides a function to perform addition, subtraction, 
+multiplication, and division operations on two numbers.
+"""
 
-    """Module providing a function for arithmetic operations"""
+def perform_operation(num1, num2, operation):
+    """
+    Performs basic arithmetic operations on two numbers.
+    
+    Args:
+        num1 (float): The first number
+        num2 (float): The second number
+        operation (str): The operation to perform ('add', 'subtract', 'multiply', 'divide')
+    
+    Returns:
+        float or str: The result of the arithmetic operation, or an error message for division by zero
+    """
     match operation:
-        case x if x == "add":
-            results = num1 + num2
-            
-        case x  if x == "subtract":
-            results = num1 - num2
-            
-        case x if x == "multiply":
-            results = num1 * num2 
-            
-        case x if x == "divide":
+        case "add":
+            return num1 + num2
+        case "subtract":
+            return num1 - num2
+        case "multiply":
+            return num1 * num2
+        case "divide":
             if num2 == 0:
-                results = "Cannot divide by zero"
-                
-            else:
-                results = num1 / num2 
-                
+                return "Cannot divide by zero"
+            return num1 / num2
         case _:
-            results = "Invalid response"
-    return results
+            return "Invalid operation"
 
             
 
