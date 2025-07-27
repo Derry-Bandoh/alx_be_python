@@ -1,7 +1,5 @@
-
+"""Module providing a function for arithmetic operations"""
 def perform_operation (num1 ,num2 ,operation) :
-    
-    """Module providing a function for arithmetic operations"""
     match operation:
         case x if x == "add":
             results = num1 + num2
@@ -22,7 +20,3 @@ def perform_operation (num1 ,num2 ,operation) :
         case _:
             results = "Invalid response"
     return results
-
-            
-
-            
