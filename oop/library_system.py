@@ -11,6 +11,10 @@ class Book:
         """
         self.title = title
         self.author = author
+    
+    def __str__(self):
+        """Return string representation of the book."""
+        return f"Book: {self.title} by {self.author}"
 
 
 class EBook(Book):
@@ -27,6 +31,10 @@ class EBook(Book):
         """
         super().__init__(title, author)  # Call parent class constructor
         self.file_size = file_size
+    
+    def __str__(self):
+        """Return string representation of the EBook."""
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 
 class PrintBook(Book):
@@ -43,6 +51,10 @@ class PrintBook(Book):
         """
         super().__init__(title, author)  # Call parent class constructor
         self.page_count = page_count
+    
+    def __str__(self):
+        """Return string representation of the PrintBook."""
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 
 class Library:
@@ -64,9 +76,4 @@ class Library:
     def list_books(self):
         """Print details of each book in the library."""
         for book in self.books:
-            if isinstance(book, EBook):
-                print(f"EBook: {book.title} by {book.author}, File Size: {book.file_size}KB")
-            elif isinstance(book, PrintBook):
-                print(f"PrintBook: {book.title} by {book.author}, Page Count: {book.page_count}")
-            else:
-                print(f"Book: {book.title} by {book.author}")
+            print(str(book))
